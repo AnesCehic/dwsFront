@@ -10,6 +10,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { ChatModule } from "./chat/chat.module";
 
 const appRoutes: Routes = [
   {
@@ -36,6 +37,7 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     MatButtonModule,
     RouterModule.forRoot(appRoutes),
+    ChatModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
