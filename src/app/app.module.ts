@@ -17,6 +17,11 @@ const appRoutes: Routes = [
   {
     path: 'chat',
     loadChildren: './chat/chat.module#ChatModule',
+  },
+  {
+    path: '',
+    redirectTo: '/users',
+    pathMatch: 'full'
   }
 ]
 
