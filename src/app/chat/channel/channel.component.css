@@ -1,0 +1,31 @@
+#channel .box {
+    position: fixed;
+    bottom: 0;
+}
+
+.messages {
+    height: 100%;
+    margin-bottom: 85px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.messages p {
+    height: 5px;
+}
+
+#channel .box {
+    width: 100%;
+    z-index: 100;
+    background-color: #eee;
+}
+
+input {
+    width: 75%;
+    margin: 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+    height: 35px;
+    padding-left: 10px;
+    font-size: 15px;
+}

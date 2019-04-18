@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   handleLogin(e): any {
     e.preventDefault();
     this.loginService.logUserIn(this.user).subscribe(
-      (res: Response) => { console.log(res.json()); },
+      (res: Response) => { console.log(res); },
       error => console.log(error)
     );
   }

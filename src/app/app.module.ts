@@ -7,6 +7,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { FormsModule } from "@angular/forms";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { HttpClientModule } from "@angular/common/http";
+import { MatInputModule } from "@angular/material/input";
 
 import { AppComponent } from './app.component';
 
@@ -32,10 +33,11 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     BrowserAnimationsModule,
     MatCardModule,
     MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
     MatButtonModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule,

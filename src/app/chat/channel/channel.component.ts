@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Route, ActivatedRoute } from "@angular/router";
+
+import { switchMap } from "rxjs/operators";
 
 @Component({
   selector: 'app-channel',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChannelComponent implements OnInit {
 
-  constructor() { }
+  message: string = "";
+
+  constructor(
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit() {
+    this.route.params.subscribe(params => {
+      console.log(params.id);
+    })
+  }
+
+  send() {
+    console.log(this.message);
   }
 
 }

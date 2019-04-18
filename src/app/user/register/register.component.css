@@ -1,0 +1,8 @@
+.registerForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.registerForm button {
+    width: 100px;
+}

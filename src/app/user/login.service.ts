@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 
 import { User } from './User';
-import { Observable, map } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +14,10 @@ export class LoginService {
   ) { }
 
   logUserIn(user: User): any {
-    return this.http.post("https://localhost:44338/api/login", user);
+    return this.http.post("https://jsonplaceholder.typicode.com/posts", {
+      title: "Neko",
+      body: "Nesto",
+      userId: 11111
+    });
   }
 }

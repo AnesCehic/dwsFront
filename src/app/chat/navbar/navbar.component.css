@@ -1,0 +1,24 @@
+#nav {
+    margin-left: 15px;
+    margin-top: 30px;
+}
+
+.add {
+    text-decoration: none;
+    color: black;
+    margin-top: 30px;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+}
+
+.list p {
+    margin-bottom: 5px;
+    margin-top: 25px;
+}
+
+.list a {
+    margin-left: 10px;
+}

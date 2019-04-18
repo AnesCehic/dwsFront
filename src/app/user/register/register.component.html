@@ -1,3 +1,11 @@
-<p>
-  register works!
-</p>
+<h1>Register</h1>
+
+<form (submit)="registerUser($event)" class="registerForm">
+  <label>
+    Email: <input type="text" name="email" [(ngModel)]="user.email">
+  </label>
+  <label>
+    Password <input type="password" name="password" [(ngModel)]="user.password">
+  </label>
+  <button type="submit">Sign up</button>
+</form>
