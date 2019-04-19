@@ -8,8 +8,8 @@ import { FormsModule } from "@angular/forms";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { HttpClientModule } from "@angular/common/http";
 import { MatInputModule } from "@angular/material/input";
-
 import { AppComponent } from './app.component';
+import { AuthGuard } from "./auth.guard";
 
 const appRoutes: Routes = [
   {
@@ -19,6 +19,7 @@ const appRoutes: Routes = [
   {
     path: 'chat',
     loadChildren: './chat/chat.module#ChatModule',
+    canActivate: [AuthGuard],
   },
   {
     path: '',

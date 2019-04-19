@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { User } from "../User";
-import { LoginService } from "../login.service";
+import { UserService } from "../user.service";
 
 @Component({
   selector: 'app-login',
@@ -15,17 +15,18 @@ export class LoginComponent implements OnInit {
     password: "",
   }
 
-  constructor(private loginService: LoginService) { }
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
   }
 
   handleLogin(e): any {
     e.preventDefault();
-    this.loginService.logUserIn(this.user).subscribe(
-      (res: Response) => { console.log(res); },
+    this.userService.logUserIn(this.user).subscribe(
+      (res: Response) => {
+        this.userService.saveToken(res['title']);
+      },
       error => console.log(error)
     );
   }
-
 }
