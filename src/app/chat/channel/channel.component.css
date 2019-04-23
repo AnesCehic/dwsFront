@@ -23,7 +23,7 @@
 input {
     width: 75%;
     margin: 20px;
-    border: 2px solid black;
+    border: 2px solid rgb(85, 85, 245);
     border-radius: 5px;
     height: 35px;
     padding-left: 10px;

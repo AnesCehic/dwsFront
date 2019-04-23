@@ -2,10 +2,12 @@
 
 <form (submit)="handleLogin($event)" class="loginForm">
   <label>
-    Email: <input type="text" name="email" [(ngModel)]="user.email">
+    Email:
   </label>
+  <input type="text" name="email" [(ngModel)]="user.email">
   <label>
-    Password: <input type="password" name="password" [(ngModel)]="user.password">
+    Password:
   </label>
+  <input type="password" name="password" [(ngModel)]="user.password">
   <button type="submit">Sign in</button>
 </form>

@@ -7,11 +7,16 @@ import { FormsModule } from "@angular/forms";
 import { ChannelComponent } from './channel/channel.component';
 import { AddChannelComponent } from './add-channel/add-channel.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { AddUsersComponent } from './add-users/add-users.component';
 
 const routes : Routes = [
   {
     path: 'addChannel',
     component: AddChannelComponent
+  },
+  {
+    path: 'addUsers',
+    component: AddUsersComponent
   },
   {
     path: '',
@@ -32,6 +37,7 @@ const routes : Routes = [
     ChannelComponent,
     AddChannelComponent,
     NavbarComponent,
+    AddUsersComponent,
   ],
   imports: [
     CommonModule,

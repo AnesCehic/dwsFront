@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
 
   handleLogin(e): any {
     e.preventDefault();
+    console.log(this.user);
     this.userService.logUserIn(this.user).subscribe(
       (res: Response) => {
         this.userService.saveToken(res['title']);
