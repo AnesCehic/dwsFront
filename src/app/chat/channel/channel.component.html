@@ -1,8 +1,6 @@
 <div id="channel">
   <div class="messages">
-    <p>messages</p>
-    <p>dsadasdsad</p>
-    <p>kraj</p>
+    <p *ngFor="let m of messages">{{ m }}</p>
   </div>
   <div class="box">
     <form (submit)="send()">

@@ -4,8 +4,6 @@
   <div class="list">
     <p>Channels</p>
 
-    <a routerLink="/chat/1">1</a>
-    <a routerLink="/chat/2">2</a>
-    <a href="#">3</a>
+    <a *ngFor="let channel of channels" [routerLink]="[ '/chat', channel.id ]">{{ channel.name }}</a>
   </div>
 </div>

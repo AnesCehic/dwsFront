@@ -8,13 +8,16 @@ import { ChatService } from "../chat.service";
 })
 export class NavbarComponent implements OnInit {
 
+  channels: any = [];
+
   constructor(private chatService: ChatService) { }
 
   ngOnInit() {
     this.chatService.getChannels().subscribe(
       (res: Response) => {
-        console.log(res);
-      }
+        this.channels = res;
+      },
+      error => console.log(error)
     );
   }
 

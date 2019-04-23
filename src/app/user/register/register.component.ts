@@ -25,7 +25,7 @@ export class RegisterComponent implements OnInit {
     e.preventDefault();
     this.userService.registerUser(this.user).subscribe(
       (res) => {
-        this.userService.saveToken(res['title']);
+        this.userService.saveToken(res['token']);
       }
     );
   }

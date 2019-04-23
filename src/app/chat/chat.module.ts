@@ -10,6 +10,10 @@ import { NavbarComponent } from './navbar/navbar.component';
 
 const routes : Routes = [
   {
+    path: 'addChannel',
+    component: AddChannelComponent
+  },
+  {
     path: '',
     component: HomeComponent,
     children: [
@@ -17,13 +21,9 @@ const routes : Routes = [
         path: ':id',
         component: ChannelComponent
       },
-      
     ]
   },
-  {
-    path: 'addChannel',
-    component: AddChannelComponent
-  }
+  
 ]
 
 @NgModule({

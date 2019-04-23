@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Route, ActivatedRoute } from "@angular/router";
 import { ChatService } from "../chat.service";
+import * as signalR from '@aspnet/signalr';
+import * as jwt_decode from 'jwt-decode';
 
 @Component({
   selector: 'app-channel',
@@ -10,6 +12,9 @@ import { ChatService } from "../chat.service";
 export class ChannelComponent implements OnInit {
 
   message: string = "";
+  user: string = "";
+  connection: any = new signalR.HubConnectionBuilder().withUrl('https://localhost:44338/chathub').build();
+  messages: string[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -21,17 +26,25 @@ export class ChannelComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.currentChannel = params.id
+      console.log(params.id)
     });
 
-    this.chatService.getChannelById(this.currentChannel).subscribe(
-      (res: Response) => {
-        console.log("res: " + res);
-      }
-    )
+    this.connection.start().then(() => {
+      alert("Connected");
+    });
+
+    let a = jwt_decode(localStorage.getItem('token'));
+    this.user = a.sub;
+
+    this.connection.on('ReceiveMessage', (user, message) => {
+      let m = `${user}: ${message}`
+      this.messages.push(m);
+    })
   }
 
   send() {
     console.log(this.message);
+    this.connection.invoke("SendMessage", this.user, this.message)
   }
 
 }
